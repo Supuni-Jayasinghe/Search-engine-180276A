@@ -39,7 +39,7 @@ const App = () => {
       <div className='main'>
         <div className='type-selector'>
           <ul>
-            <li>
+            <li className='form-li'>
               <form>
                 <label>
                   <input
@@ -52,7 +52,7 @@ const App = () => {
                 </label>
               </form>
             </li>
-            <li>
+            <li className='form-li' style={{width: '38.2px'}}>
               <button onClick={sendSearchRequest}>Search</button>
             </li>
           </ul>
@@ -78,7 +78,7 @@ const App = () => {
                   <p>Album: {document._source.album}</p>
                   <p>Year: {document._source.year}</p>
                   <p>Genre: {document._source.genre}</p>
-                  <p>Lyrics: {document._source.lyrics}</p>
+                  <p style={{whiteSpace: 'pre-line'}}>Lyrics: {document._source.lyrics}</p>
                 </div>
               </div>
             ))}

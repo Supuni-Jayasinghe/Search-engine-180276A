@@ -68,8 +68,15 @@ div {
 }
 
 .form {
-  width: 200px;
-  height: 16px;
+  width: 300px;
+  height: 25px;
+  border-radius: 10px;
+  border: 2px solid #9d9d9d;
+  padding: 5px 10px;
+}
+.form-li {
+  border-radius: 10px;
+  border: 0px;
 }
 
 .form::placeholder {
@@ -83,7 +90,11 @@ div {
 }
 
 .type-selector button {
-  height: 23px;
+  height: 38.2px;
+  width: 80px;
+  border-radius: 10px;
+  /* margin-left: 10px; */
+  cursor: pointer;
 }
 
 .search-results {
@@ -100,12 +111,11 @@ div {
   font-weight: bold;
   border: 1px;
   float: left;
-  margin: 1px;
-  margin-top: 5px;
-  margin-right: 10px;
-  padding: 10px epx;
+  margin: 10px;
   justify-content: space-between;
-  max-width: 500px;
+  width: 400px;
+  height: 500px;
+  overflow: auto;
 }
 
 .results-text {

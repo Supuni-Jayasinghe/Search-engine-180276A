@@ -19,13 +19,11 @@ app.get('/results', (req, res) => {
       index: 'sinsongsdb',
       body: {
         query: {
-          bool: {
-            filter: [
-              {
-                match: { metaphor: passedMetaphor },
-              },
-            ],
-          },
+          multi_match: {
+            query: passedMetaphor,
+            type: 'bool_prefix',
+            fields: ['sourcedomain', 'targetdomain']
+          }
         },
       },
     });
