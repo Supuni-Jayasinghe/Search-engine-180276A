@@ -88,8 +88,6 @@ app.get('/results', (req, res) => {
           }
         },
       });
-
-
       res.json(body.hits.hits);
     }
   }

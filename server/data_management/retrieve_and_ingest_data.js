@@ -13,7 +13,7 @@ router.get('/sinsongsdb', async function (req, res) {
   indexData = async () => {
     try {
       console.log('Retrieving data');
-
+      // Send request to api
       const SINHALASONGS = await axios.get(`${URL}`, {
         headers: {
           'Content-Type': ['application/json', 'charset=utf-8'],
@@ -43,6 +43,8 @@ router.get('/sinsongsdb', async function (req, res) {
             sourcedomain: results.sourcedomain,
             targetdomain: results.targetdomain,
           }), 
+
+          // to index transformed data
           await client.index({
             index: 'sinsongsdb',
             id: results.id,

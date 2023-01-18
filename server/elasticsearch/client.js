@@ -1,7 +1,8 @@
-//in server/elasticsearch/client.js
+// create elasticsearch instance
 const { Client } = require('@elastic/elasticsearch');
 const config = require('config');
 
+// access credentials were stored under 'elastic' in config/default.json
 const elasticConfig = config.get('elastic');
 
 const client = new Client({
@@ -9,8 +10,12 @@ const client = new Client({
     id: elasticConfig.cloudID,
   },
   auth: {
-    apiKey: elasticConfig.apiKey
+    username: elasticConfig.username,
+    password: elasticConfig.password
   },
+  // auth: {
+  //   apiKey: elasticConfig.apiKey
+  // },
 });
 
 client.ping()
