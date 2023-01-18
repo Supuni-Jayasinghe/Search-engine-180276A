@@ -17,7 +17,7 @@ app.get('/results', (req, res) => {
   const passedSinger = req.query.singer;
 
   var selectedSinger;
-  if (passedSinger===undefined){
+  if (passedSinger===undefined || passedSinger==='සියලුම ගායකයන්'){
     selectedSinger = ['අමරදේව ඩබ්ලිව් ඩී','අමරසිරි පීරිස්','නන්දා මාලනී','එඩ්වඩ් ජයකොඩි','ටී එම් ජයරත්න','වික්ටර් රත්නායක','සුනිල් එදිරිසිංහ','කරුණාරත්න දිවුල්ගනේ']
   } else {
     selectedSinger = [passedSinger]
@@ -28,6 +28,7 @@ app.get('/results', (req, res) => {
       const body = await client.search({
         index: 'sinsongsdb',
         body: {
+          size: 20,
           query: {
             bool: {
               must: [
@@ -49,6 +50,7 @@ app.get('/results', (req, res) => {
       const body = await client.search({
         index: 'sinsongsdb',
         body: {
+          size: 20,
           query: {
             bool: {
               must: [
@@ -70,6 +72,7 @@ app.get('/results', (req, res) => {
       const body = await client.search({
         index: 'sinsongsdb',
         body: {
+          size: 20,
           query: {
             bool: {
               must: [
